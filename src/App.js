@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Greeting from './components/Greeting/Greeting';
 
-export default function Greeting(props) {
-  const [name, setName] = useState('Mary');
-
-  function handleNameChange(e) {
-    setName(e.target.value);
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Greeting />
+      </div>
+    );
   }
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <section>
-          <p>Name</p>
-          <input
-            className="App-input"
-            value={name}
-            onChange={handleNameChange}
-          />
-        </section>
-      </header>
-    </div>
-  );
 }
+
+export default App;
